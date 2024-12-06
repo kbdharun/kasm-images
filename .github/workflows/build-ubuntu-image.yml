@@ -49,7 +49,7 @@ jobs:
         COSIGN_PRIVATE_KEY: ${{ secrets.COSIGN_PRIVATE_KEY }}
 
     - name: Attest pushed image
-      uses: actions/attest-build-provenance@v1
+      uses: actions/attest-build-provenance@v2
       id: attest
       with:
         subject-name: index.docker.io/${{ github.actor }}/${{ env.IMAGE_NAME }}
@@ -90,7 +90,7 @@ jobs:
         COSIGN_PRIVATE_KEY: ${{ secrets.COSIGN_PRIVATE_KEY }}
 
     - name: Attest pushed image
-      uses: actions/attest-build-provenance@v1
+      uses: actions/attest-build-provenance@v2
       id: attest
       with:
         subject-name: ${{ env.REGISTRY1 }}/${{ github.actor }}/${{ env.IMAGE_NAME }}
@@ -130,7 +130,7 @@ jobs:
         COSIGN_PRIVATE_KEY: ${{ secrets.COSIGN_PRIVATE_KEY }}
   
     - name: Attest pushed image
-      uses: actions/attest-build-provenance@v1
+      uses: actions/attest-build-provenance@v2
       id: attest
       with:
         subject-name: ${{ env.REGISTRY3 }}/${{ github.actor }}/${{ env.IMAGE_NAME }}
